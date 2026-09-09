@@ -82,11 +82,11 @@ and the current cycle number. <ins>UPDATED EVERY YEAR.</ins></li>
 species detected during monitoring in MABI.</li>
 </ul>
 
-<ins>Note: Because file paths are not allowed through DGEC, there are places within these reports that require paths 
+<b>Note: Because file paths are not allowed through DGEC, there are places within these reports that require paths 
 to be updated. If you try to knit a report, and you get an error about a file path not found, track down where the 
-error occurred, and update the path to your computer. Be sure not to then push that path to DOI-NPS.</ins> 
+error occurred, and update the path to your computer. Be sure not to then push that path to DOI-NPS.</b> 
 
-<ins>Note 2: Several reports connect to a server using a CSV with the SQL server address that is not posted to GitHub, 
+<b>Note 2: Several reports connect to a server using a CSV with the SQL server address that is not posted to GitHub, 
 and lives in a file at the same level as the repo folder. Kate Miller can send that CSV to folks with access to the 
-SQL server.</ins>
+SQL server.</b>
 
