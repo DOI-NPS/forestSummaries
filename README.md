@@ -51,6 +51,10 @@ only one cycle of data. Now that repeated visits are occurring, this is more of 
 MIDN park.</li>
 <li><b>/scripts/supplemental_subunit_figures_NETN.Rmd:</b> paged html report for an individual subunit in a given
 NETN park.</li>
+<li><b>ACAD_tree_growth_figures.Rmd:</b> tabbed report looking at tree growth and mortality of individual plots and 
+species in ACAD to examine potential </li>
+<li><b>ACAD_tree_growth_figures_abbrev.Rmd:</b> same tabbed report as above but without individual plots to keep report small enough
+for email.</li>
 </ul>
 
 Helper scripts to iterate generating reports for multiple parks, plots, etc:
@@ -74,6 +78,8 @@ and the current cycle number. <b>UPDATED EVERY YEAR.</b></li>
 and the current cycle number. <b>UPDATED EVERY YEAR.</b></li>
 <li>NPS_tree_species_groups.csv: species groups to help simplify maps (note these are just a starting point).</li>
 <li>tree_conditions_table.csv: spells out long names of tree condition abbreviations.</li>
+<li>scripts/VT_RTE_Species.csv: Downloaded from VT Natural Heritage Program website to identify any rare, threatened, or endangered
+species detected during monitoring in MABI.</li>
 </ul>
 
 <b>Note: Because file paths are not allowed through DGEC, there are places within these reports that require paths 
