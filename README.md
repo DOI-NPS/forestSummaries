@@ -16,77 +16,77 @@ www.github.com/katemmiller/forestSummaries</a></li>
 
 This package includes the following reports and their dependencies in the order they run: 
 <ul>
-<li><b>ACAD_figures_and_tables.Rmd:</b> paged html report for ACAD-only. Given there are so many more plots than other parks, 
+<li><u>ACAD_figures_and_tables.Rmd:</u> paged html report for ACAD-only. Given there are so many more plots than other parks, 
 it was easier to build this rmd separately. Note, however that only 2 ACAD-specific scripts are sourced (see below).</li>
   <ul>
-  <li>source_script_ACAD.R: sets up output folders and params used in remaining scripts.</li>
-  <li>scripts/forest_summary_code_ACAD.R: generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
-  <li>scripts/regen_debt_metrics_NETN.R: calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
-  <li>scripts/tree_regen_stem_changes_by_species_loess_NETN.R: generates Figs 4 - 6.</li>
+  <li><u>source_script_ACAD.R:</u> sets up output folders and params used in remaining scripts.</li>
+  <li><u>scripts/forest_summary_code_ACAD.R:</u> generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
+  <li><u>scripts/regen_debt_metrics_NETN.R:</u> calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
+  <li><u>scripts/tree_regen_stem_changes_by_species_loess_NETN.R:</u> generates Figs 4 - 6.</li>
   </ul>
-<li><b>ASIS_figures_and_tables.Rmd:</b> paged html report for ASIS-only. This report was only needed for ASIS when there was
+<li><u>ASIS_figures_and_tables.Rmd:</u> paged html report for ASIS-only. This report was only needed for ASIS when there was
 only one cycle of data. Now that repeated visits are occurring, this is more of a template in case new parks are ever added.</li>
   <ul>
-  <li>source_script_ASIS.R: sets up output folders and params used in remaining scripts.</li>
-  <li>scripts/forest_summary_code_ASIS.R: generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
-  <li>scripts/regen_debt_metrics_ASIS.R: calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
-  <li>scripts/tree_regen_stem_changes_by_species_loess_ASIS.R: generates Figs 4 - 6.</li>
+  <li><u>source_script_ASIS.R:</u> sets up output folders and params used in remaining scripts.</li>
+  <li><u>scripts/forest_summary_code_ASIS.R:</u> generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
+  <li><u>scripts/regen_debt_metrics_ASIS.R:</u> calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
+  <li><u>scripts/tree_regen_stem_changes_by_species_loess_ASIS.R:</u> generates Figs 4 - 6.</li>
   </ul>
-<li><b>MIDN_figures_and_tables.Rmd:</b> paged html report for all MIDN and NCBN parks besides SAHI.</li>
+<li><u>MIDN_figures_and_tables.Rmd:</u> paged html report for all MIDN and NCBN parks besides SAHI.</li>
   <ul>
-  <li>source_script_MIDN.R: sets up output folders and params used in remaining scripts.</li>
-  <li>scripts/forest_summary_code_MIDN.R: generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
-  <li>scripts/regen_debt_metrics_MIDN.R: calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
-  <li>scripts/tree_regen_stem_changes_by_species_loess_MIDN.R: generates Figs 4 - 6.</li>
+  <li><u>source_script_MIDN.R:</u> sets up output folders and params used in remaining scripts.</li>
+  <li><u>scripts/forest_summary_code_MIDN.R:</u> generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
+  <li><u>scripts/regen_debt_metrics_MIDN.R:</u> calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
+  <li><u>scripts/tree_regen_stem_changes_by_species_loess_MIDN.R:</u> generates Figs 4 - 6.</li>
   </ul>
-<li><b>NETN_figures_and_tables.Rmd:</b> paged html report for all NETN parks except ACAD.</li>
+<li><u>NETN_figures_and_tables.Rmd:</u> paged html report for all NETN parks except ACAD.</li>
   <ul>
-  <li>source_script_NETN.R: sets up output folders and params used in remaining scripts.</li>
-  <li>scripts/forest_summary_code_NETN.R: generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
-  <li>scripts/regen_debt_metrics_NETN.R: calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
-  <li>scripts/tree_regen_stem_changes_by_species_loess_NETN.R: generates Figs 4 - 6.</li>
+  <li><u>source_script_NETN.R:</u> sets up output folders and params used in remaining scripts.</li>
+  <li><u>scripts/forest_summary_code_NETN.R:</u> generates shapefiles for ArcGIS maps and Figure 3 and all Tables. </li>
+  <li><u>scripts/regen_debt_metrics_NETN.R:</u> calculates metrics for regeneration debt and creates Figs 1 and 2.</li>
+  <li><u>scripts/tree_regen_stem_changes_by_species_loess_NETN.R:</u> generates Figs 4 - 6.</li>
   </ul>
   
-<li><b>/scripts/supplemental_subunit_figures_MIDN.Rmd:</b> paged html report for an individual subunit in a given
+<li><u>/scripts/supplemental_subunit_figures_MIDN.Rmd:</u> paged html report for an individual subunit in a given
 MIDN park.</li>
-<li><b>/scripts/supplemental_subunit_figures_NETN.Rmd:</b> paged html report for an individual subunit in a given
+<li><u>/scripts/supplemental_subunit_figures_NETN.Rmd:</u> paged html report for an individual subunit in a given
 NETN park.</li>
-<li><b>ACAD_tree_growth_figures.Rmd:</b> tabbed report looking at tree growth and mortality of individual plots and 
+<li><u>ACAD_tree_growth_figures.Rmd:</u> tabbed report looking at tree growth and mortality of individual plots and 
 species in ACAD to examine potential </li>
-<li><b>ACAD_tree_growth_figures_abbrev.Rmd:</b> same tabbed report as above but without individual plots to keep report small enough
+<li><u>ACAD_tree_growth_figures_abbrev.Rmd:</u> same tabbed report as above but without individual plots to keep report small enough
 for email.</li>
 </ul>
 
 Helper scripts to iterate generating reports for multiple parks, plots, etc:
 <ul>
-<li>MIDN_figures_and_tables_pdf: Automates generating paged html reports for list of MIDN parks, and converting the paged 
+<li><u>MIDN_figures_and_tables_pdf.R:</u> Automates generating paged html reports for list of MIDN parks, and converting the paged 
 html documents into pdfs.</li>
-<li>NETN_figures_and_tables_pdf: Automates generating paged html reports for list of NETN parks, and converting the paged 
+<li><u>NETN_figures_and_tables_pdf.R:</u> Automates generating paged html reports for list of NETN parks, and converting the paged 
 html documents into pdfs.</li>
 </ul>
 
 Important files to help with parameter set up:
 <ul>
-<li>MIDN_NCBN_indicator_species.csv: history of indicator species list used to filter on original indicator list.</li>
-<li>MIDN_MetaData.csv: contains park long names.</li>
-<li>MIDN_MetaData_Subunits.csv: contains subunit long names.</li>
-<li>MIDN_params.csv: shows the start and end year for all monitoring, the start and end year for the current 4-year cycle,
-and the current cycle number. <b>UPDATED EVERY YEAR.</b></li>
-<li>NETN_MetaData.csv: contains park long names.</li>
-<li>NETN_MetaData_Subunits.csv: contains subunit long names.</li>
-<li>NETN_params.csv: shows the start and end year for all monitoring, the start and end year for the current 4-year cycle,
-and the current cycle number. <b>UPDATED EVERY YEAR.</b></li>
-<li>NPS_tree_species_groups.csv: species groups to help simplify maps (note these are just a starting point).</li>
-<li>tree_conditions_table.csv: spells out long names of tree condition abbreviations.</li>
-<li>scripts/VT_RTE_Species.csv: Downloaded from VT Natural Heritage Program website to identify any rare, threatened, or endangered
+<li><u>MIDN_NCBN_indicator_species.csv:</u> history of indicator species list used to filter on original indicator list.</li>
+<li><u>MIDN_MetaData.csv:</u> contains park long names.</li>
+<li><u>MIDN_MetaData_Subunits.csv:</u> contains subunit long names.</li>
+<li><u>MIDN_params.csv:</u> shows the start and end year for all monitoring, the start and end year for the current 4-year cycle,
+and the current cycle number. <u>UPDATED EVERY YEAR.</u></li>
+<li><u>NETN_MetaData.csv:</u> contains park long names.</li>
+<li><u>NETN_MetaData_Subunits.csv:</u> contains subunit long names.</li>
+<li><u>NETN_params.csv:</u> shows the start and end year for all monitoring, the start and end year for the current 4-year cycle,
+and the current cycle number. <u>UPDATED EVERY YEAR.</u></li>
+<li><u>NPS_tree_species_groups.csv:</u> species groups to help simplify maps (note these are just a starting point).</li>
+<li><u>tree_conditions_table.csv:</u> spells out long names of tree condition abbreviations.</li>
+<li><u>scripts/VT_RTE_Species.csv:</u> Downloaded from VT Natural Heritage Program website to identify any rare, threatened, or endangered
 species detected during monitoring in MABI.</li>
 </ul>
 
-<b>Note: Because file paths are not allowed through DGEC, there are places within these reports that require paths 
+<u>Note: Because file paths are not allowed through DGEC, there are places within these reports that require paths 
 to be updated. If you try to knit a report, and you get an error about a file path not found, track down where the 
-error occurred, and update the path to your computer. Be sure not to then push that path to DOI-NPS.</b> 
+error occurred, and update the path to your computer. Be sure not to then push that path to DOI-NPS.</u> 
 
-<b>Note 2: Several reports connect to a server using a CSV with the SQL server address that is not posted to GitHub, 
+<u>Note 2: Several reports connect to a server using a CSV with the SQL server address that is not posted to GitHub, 
 and lives in a file at the same level as the repo folder. Kate Miller can send that CSV to folks with access to the 
-SQL server.</b>
+SQL server.</u>
 
