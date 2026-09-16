@@ -1,5 +1,5 @@
-Package: forestQAQC
-Title: forestQAQC: A repo for automated summaries of NETN/MIDN/NCBN forest health monitoring.
+Package: forestSummaries
+Title: forestSummaries: A repo for automated summaries of NETN/MIDN/NCBN forest health monitoring.
 Version: 1.0.1
 Authors@R: c(
     person(given="Kate", family="Miller", email="kathryn_miller@nps.gov",
