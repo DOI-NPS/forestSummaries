@@ -1,5 +1,5 @@
 # forestSummaries
-This repo contains scripts and R markdown reports that generate park-level automated summaries as paged html files of MIDN, NCBN, and NETN 
+This repo contains R scripts and markdown reports that generate park-level automated summaries as paged html files of MIDN, NCBN, and NETN 
 forest data and compiles the shapefiles used in the map based summaries that are constructed in ArcGIS Pro.
 
 Notes on this repo:
