@@ -41,9 +41,9 @@ render_MIDN_report("COLO", 2026)
 render_MIDN_report("PETE", 2026)
 render_MIDN_report("GEWA", 2026)
 render_MIDN_report("THST", 2026)
-#render_MIDN_report("ASIS", 2026)
-#render_MIDN_report("FRSP", 2026)
-#render_MIDN_report("RICH", 2026)
+render_MIDN_report("ASIS", 2026)
+render_MIDN_report("FRSP", 2026)
+render_MIDN_report("RICH", 2026)
 
 pdf_print("VAFO") # not sure why purrr::map won't iterate on pdf_print
 pdf_print("HOFU")
@@ -54,9 +54,13 @@ pdf_print("COLO")
 pdf_print("PETE")
 pdf_print("GEWA")
 pdf_print("THST")
-# pdf_print("ASIS")
-# pdf_print("FRSP")
-# pdf_print("RICH")
+pdf_print("ASIS")
+pdf_print("FRSP")
+pdf_print("RICH")
+
+chrome_print(input = paste0(out_path, "RICH_figures_and_tables_NAnna.html"),
+             output = paste0(out_path, "RICH_figures_and_tables_NAnna.pdf"),
+             format = "pdf")
 
 render_MIDN_report_subunit <- function(parkcode, sub, year){
   render(input = "MIDN_figures_subunits.Rmd",
