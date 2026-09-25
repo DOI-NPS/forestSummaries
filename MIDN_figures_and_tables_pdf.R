@@ -5,7 +5,8 @@ library(rmarkdown)
 
 render_MIDN_report <- function(parkcode, year, makemaps = F, partial = F){
     render(input = "MIDN_figures_and_tables.Rmd",
-           params = list(park = parkcode, report_year = year, make_maps = makemaps, partial_cycle = partial),
+           params = list(park = parkcode, report_year = year, 
+                         make_maps = makemaps, partial_cycle = partial),
            #envir = VIEWS_NETN,
            output_file = paste0(parkcode, 
                                 "_Figures_and_Tables_", 
@@ -37,8 +38,8 @@ render_MIDN_report("HOFU", 2026, F, T)
 render_MIDN_report("GETT", 2026, F, T)
 render_MIDN_report("APCO", 2026, F, T)
 render_MIDN_report("BOWA", 2026, F, T)
-render_MIDN_report("COLO", 2026, F, T)
 render_MIDN_report("PETE", 2026, F, F)
+render_MIDN_report("COLO", 2026, F, T)
 render_MIDN_report("GEWA", 2026, F, T)
 render_MIDN_report("THST", 2026, F, T)
 render_MIDN_report("ASIS", 2026, F, T)
@@ -50,9 +51,9 @@ pdf_print("HOFU")
 pdf_print("GETT")
 pdf_print("APCO") 
 pdf_print("BOWA")
-pdf_print("COLO")
 pdf_print("PETE")
 
+pdf_print("COLO")
 pdf_print("GEWA")
 pdf_print("THST")
 pdf_print("ASIS")
