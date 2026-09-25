@@ -16,7 +16,7 @@ write_to_shp <- function(data, x = "X", y = "Y", shp_name){
 
 # hard coding for first cycle
 change_cycle <- function(df){
-  df$cycle <- 1
+  if(nrow(df) > 0){df$cycle <- 1}
   df
 }
 
