@@ -7,8 +7,8 @@
 # McWilliams 100 point scale, not the 1m2 scale that MIDN used to use.
 
 # Make sure packages are updated
-#devtools::install_github("KateMMiller/forestMIDN")
-#devtools::install_github("KateMMiller/forestTrends")
+#devtools::install_github("doi-nps/forestMIDN")
+#devtools::install_github("doi-nps/forestTrends")
 
 # Imports/Libraries
 library(forestMIDN)
@@ -29,7 +29,7 @@ if(!exists("path")){path = paste0('./output/', report_year, "/MIDN/")} #general 
 #
 # midn_names <- read.csv("MIDN_MetaData.csv")
 # midn_params <- read.csv("MIDN_params.csv") # !!!! MUST UPDATE EVERY YEAR !!!!
-# park <<- "VAFO"
+# park <<- "FRSP"
 # from <<- as.numeric(midn_params$from[midn_params$park == park])
 # from_4yr <<- as.numeric(midn_params$from_4yr[midn_params$park == park])
 # to <<- as.numeric(midn_params$to[midn_params$park == park])
@@ -41,7 +41,7 @@ if(!exists("path")){path = paste0('./output/', report_year, "/MIDN/")} #general 
 # park_long <- midn_names$LongName[midn_names$ParkCode == park]
 # park_title <- midn_names$LongName_title[midn_names$ParkCode == park]
 # network_long <- midn_names$Network_long[midn_names$ParkCode == park]
-# report_year <- 2024
+# report_year <- 2026
 
 
 

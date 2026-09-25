@@ -10,9 +10,10 @@ output:
     #   in_header: "header_MIDN.html"
     #   after_body: "footer_MIDN.html"
 params:
-  park: 'APCO'
+  park: 'RICH'
   report_year: 2026
   make_maps: FALSE
+  loc_type: "all"
 ---
 
 ```{r eval = F, include = F}
@@ -28,7 +29,7 @@ params:
 
 
 ```{r setup, include = FALSE, results = 'hide'}
-knitr::opts_chunk$set(echo = FALSE, fig.align = 'center')
+knitr::opts_chunk$set(echo = FALSE, fig.align = 'center', warning = F, message = F)
 options(knitr.kable.NA = '-')
 
 library(pagedown)
@@ -56,7 +57,7 @@ make_maps = params$make_maps
 park <<- params$park #For running 'generate_all_MIDN_reports.R'
 report_year <- params$report_year
 path <<- paste0('./output/', report_year, "/MIDN/")
-
+locType <<- params$loc_type 
 # output files go here
 midn_names <<- read.csv("MIDN_MetaData.csv")
 midn_params <<- read.csv("MIDN_params.csv") # !!!! MUST UPDATE EVERY YEAR !!!!
@@ -67,7 +68,7 @@ cycle_latest <<- as.numeric(midn_params$cycle_latest[midn_params$park == park])
 # # from_prev <<- as.numeric(midn_params$from_prev[midn_params$park == park])
 # # to_prev <<- as.numeric(midn_params$to_prev[midn_params$park == park])
 QAQC <<- FALSE
-locType <<- 'VS'
+
 # #+++ NOTE: IF GET add_header_above error, need to update cycle_latest in MIDN_params.csv  +++
 park_long <- midn_names$LongName[midn_names$ParkCode == park]
 park_title <- midn_names$LongName_title[midn_names$ParkCode == park]
