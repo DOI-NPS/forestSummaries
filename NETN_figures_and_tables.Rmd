@@ -11,6 +11,7 @@ params:
   park: 'WEFA'
   report_year: 2026
   make_maps: TRUE # FALSE if not making ArcGIS maps; drops Table 5
+  partial_cycle: FALSE
 ---
 
 ```{r eval = F, include = F}
@@ -50,6 +51,7 @@ library(vegan)
 importData() # If you don't have the SQL server version of the database installed, use importCSV() below
 #importCSV("../data/NETN_Forest_20260827.zip")
 make_maps <- params$make_maps
+partial_cycle <- params$partial_cycle
 ```
 
 ```{r}
@@ -117,20 +119,20 @@ source('./scripts/tree_regen_stem_changes_by_species_loess_NETN.R') # smoothed c
 ```
 
 ```{r results = 'hide', include = F}
-cap_t1 <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 1.</b> Average plot-level seedling and sapling stem densities (stems per m<sup>2</sup>) and stocking index (at the 2m radius scale) by cycle. Only native, canopy-forming species are included. Note that Fraxinus spp. (ash species) are no longer considered canopy-forming species. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). The stocking index quantifies whether current regeneration densities are sufficient to restock a forest canopy. The index is a weighted sum of seedling and sapling densities where larger seedling size classes get higher weights. Cells highlighted in green are plots that meet the minimum management target of 0.25 seedlings/m<sup>2</sup> and 0.14 saplings/m<sup>2</sup> or have a stocking index >100. ", 
+cap_t1 <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 1.</b> Average plot-level seedling and sapling stem densities (stems per m<sup>2</sup>) and stocking index (at the 2m radius scale) by cycle. Only native, canopy-forming species are included. Note that Fraxinus spp. (ash species) are no longer considered canopy-forming species. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). The stocking index quantifies whether current regeneration densities are sufficient to restock a forest canopy. The index is a weighted sum of seedling and sapling densities where larger seedling size classes get higher weights. Cells highlighted in green are plots that meet the minimum management target of 0.25 seedlings/m<sup>2</sup> and 0.14 saplings/m<sup>2</sup> or have a stocking index >100. ", ifelse(partial_cycle == TRUE, "<b>Note that the latest cycle is only partially complete.</b>", ""),
 if(park == "MORR"){"Note that Plot 14 and 25 are in a deer exclosure established in 2007."}, "</p>")
 
-cap_t1_cont <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 1 (cont.).</b> Average plot-level seedling and sapling stem densities (stems per m<sup>2</sup>) and stocking index (at the 2m radius scale) by cycle. Only native, canopy-forming species are included. Note that Fraxinus spp. (ash species) are no longer considered canopy-forming species. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). The stocking index quantifies whether current regeneration densities are sufficient to restock a forest canopy. The index is a weighted sum of seedling and sapling densities where larger seedling size classes get higher weights. Cells highlighted in green are plots that meet the minimum management target of 0.25 seedlings/m<sup>2</sup> and 0.14 saplings/m<sup>2</sup> or have a stocking index >100.", 
+cap_t1_cont <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 1 (cont.).</b> Average plot-level seedling and sapling stem densities (stems per m<sup>2</sup>) and stocking index (at the 2m radius scale) by cycle. Only native, canopy-forming species are included. Note that Fraxinus spp. (ash species) are no longer considered canopy-forming species. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). The stocking index quantifies whether current regeneration densities are sufficient to restock a forest canopy. The index is a weighted sum of seedling and sapling densities where larger seedling size classes get higher weights. Cells highlighted in green are plots that meet the minimum management target of 0.25 seedlings/m<sup>2</sup> and 0.14 saplings/m<sup>2</sup> or have a stocking index >100.", ifelse(partial_cycle == TRUE, "<b>Note that the latest cycle is only partially complete.</b>", ""), 
 if(park == "MORR"){"Note that Plot 14 and 25 are in a deer exclosure established in 2007."}, "</p>")
 
-cap_t2 <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 2.</b> Average % cover and number of invasive species detected in each plot by cycle. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). ", " Plots with at least 10% average cover or 4 or more invasive species present are in yellow. ", 
+cap_t2 <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 2.</b> Average % cover and number of invasive species detected in each plot by cycle. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). ", " Plots with at least 10% average cover or 4 or more invasive species present are in yellow. ", ifelse(partial_cycle == TRUE, "<b>Note that the latest cycle is only partially complete.</b>", ""), 
 if(park == "MORR"){"Note that Plot 14 and 25 are in a deer exclosure established in 2007."}, "</p>")
 
-cap_t2_cont <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 2 (cont.).</b> Average % cover and number of invasive species detected in each plot by cycle. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). ", " Plots with at least 10% average cover or 4 or more invasive species present are in yellow. ", 
+cap_t2_cont <- paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 2 (cont.).</b> Average % cover and number of invasive species detected in each plot by cycle. ", paste0(cycle_labs, collapse = "; "), ". Plots are sampled in 4-year rotations, with a quarter of the plots sampled each year (i.e. a panel). ", " Plots with at least 10% average cover or 4 or more invasive species present are in yellow. ", ifelse(partial_cycle == TRUE, "<b>Note that the latest cycle is only partially complete.</b>", ""),
 if(park == "MORR"){"Note that Plot 14 and 25 are in a deer exclosure established in 2007."}, "</p>")
 
 cap_t3 <- if(park %in% "MORR"){
-    paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 3.</b> Number of plots out of ", num_plots, " where priority invasive species were detected. ", "Priority invasive species are those that capable of dominating Eastern US forest habitats. Note that Plot 14 and 25 are in a deer exclosure, and Plot 14 was not part of the original sample design. ", paste0(cycle_labs, collapse = "; "), "</p>")
+    paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 3.</b> Number of plots out of ", num_plots, " where priority invasive species were detected. ", "Priority invasive species are those that capable of dominating Eastern US forest habitats. Note that Plot 14 and 25 are in a deer exclosure, and Plot 14 was not part of the original sample design. ", paste0(cycle_labs, collapse = "; "), "</p>"), ifelse(partial_cycle == TRUE, "<b>Note that the latest cycle is only partially complete.</b>", ""),  
 } else if(park %in% c("MIMA", "ROVA", "SARA", "WEFA")){
     paste0("<p style='font-size:10px; padding:0 5px;'><b>Table 3.</b> Number of plots out of ", num_plots, " where priority invasive species were detected. ", "Priority invasive species are those that capable of dominating Eastern US forest habitats.", paste0(cycle_labs, collapse = "; "), "</p>")
 } else {
