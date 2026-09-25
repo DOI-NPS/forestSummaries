@@ -13,8 +13,8 @@ params:
   park: 'ASIS'
   report_year: 2026
   make_maps: FALSE
-  loc_type: "all"
-  partial_cycle: TRUE
+  loc_type: "VS"
+  partial_cycle: FALSE
 ---
 
 ```{r eval = F, include = F}
@@ -43,7 +43,7 @@ library(cowplot)
 library(ggpubr)
 #devtools::install_github(repo="haozhu233/kableExtra", ref="a6af5c0") # for collapse_rows()
 library(kableExtra)
-#devtools::install_github("katemmiller/forestTrends")
+#devtools::install_github("doi-nps/forestTrends")
 library(forestTrends)
 library(sf)
 library(vegan)

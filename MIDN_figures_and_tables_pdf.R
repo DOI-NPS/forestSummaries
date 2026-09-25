@@ -3,9 +3,9 @@ library(pagedown)
 library(purrr)
 library(rmarkdown)
 
-render_MIDN_report <- function(parkcode, year){
+render_MIDN_report <- function(parkcode, year, makemaps = F, partial = F){
     render(input = "MIDN_figures_and_tables.Rmd",
-           params = list(park = parkcode, report_year = year),
+           params = list(park = parkcode, report_year = year, make_maps = makemaps, partial_cycle = partial),
            #envir = VIEWS_NETN,
            output_file = paste0(parkcode, 
                                 "_Figures_and_Tables_", 
@@ -32,18 +32,18 @@ out_path = paste0('./output/', report_year, "/MIDN/")
 # years = rep(2026, length(parks))
 # purrr::map2(parks, years, ~render_MIDN_report(.x, .y))
 
-render_MIDN_report("VAFO", 2026)
-render_MIDN_report("HOFU", 2026)
-render_MIDN_report("GETT", 2026)
-render_MIDN_report("APCO", 2026)
-render_MIDN_report("BOWA", 2026)
-render_MIDN_report("COLO", 2026)
-render_MIDN_report("PETE", 2026)
-render_MIDN_report("GEWA", 2026)
-render_MIDN_report("THST", 2026)
-render_MIDN_report("ASIS", 2026)
-render_MIDN_report("FRSP", 2026)
-render_MIDN_report("RICH", 2026)
+render_MIDN_report("VAFO", 2026, F, T)
+render_MIDN_report("HOFU", 2026, F, T)
+render_MIDN_report("GETT", 2026, F, T)
+render_MIDN_report("APCO", 2026, F, T)
+render_MIDN_report("BOWA", 2026, F, T)
+render_MIDN_report("COLO", 2026, F, T)
+render_MIDN_report("PETE", 2026, F, F)
+render_MIDN_report("GEWA", 2026, F, T)
+render_MIDN_report("THST", 2026, F, T)
+render_MIDN_report("ASIS", 2026, F, T)
+render_MIDN_report("FRSP", 2026, F, F)
+render_MIDN_report("RICH", 2026, F, F)
 
 pdf_print("VAFO") # not sure why purrr::map won't iterate on pdf_print
 pdf_print("HOFU")
@@ -52,6 +52,7 @@ pdf_print("APCO")
 pdf_print("BOWA")
 pdf_print("COLO")
 pdf_print("PETE")
+
 pdf_print("GEWA")
 pdf_print("THST")
 pdf_print("ASIS")
@@ -86,3 +87,17 @@ render_MIDN_report_subunit("PETE", "PETE_EAST", 2026)
 
 pdf_print_subunit("PETE", "PETE_FIVE")
 pdf_print_subunit("PETE", "PETE_EAST")
+
+render_MIDN_report_subunit("FRSP", "FRSP_CHWILD", 2026)
+render_MIDN_report_subunit("FRSP", "FRSP_CHWILD", 2026)
+render_MIDN_report_subunit("FRSP", "FRSP_FRED", 2026)
+render_MIDN_report_subunit("FRSP", "FRSP_FRED", 2026)
+render_MIDN_report_subunit("FRSP", "FRSP_SPOT", 2026)
+render_MIDN_report_subunit("FRSP", "FRSP_SPOT", 2026)
+
+pdf_print_subunit("FRSP", "FRSP_CHWILD")
+pdf_print_subunit("FRSP", "FRSP_CHWILD")
+pdf_print_subunit("FRSP", "FRSP_FRED")
+pdf_print_subunit("FRSP", "FRSP_FRED")
+pdf_print_subunit("FRSP", "FRSP_SPOT")
+pdf_print_subunit("FRSP", "FRSP_SPOT")
