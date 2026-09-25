@@ -11,7 +11,7 @@ library(sf)
 library(vegan)
 library(ggpubr)
 
-#report_year = 2025
+#report_year = 2026
 if(!exists("path")){path = paste0('./output/', report_year, "/MIDN/")} #general path that should work for everyone
 
 # Make sure local copy of DB is current or connect to server
@@ -168,24 +168,24 @@ midn1_labs <- c("1" = "Cycle 1: 2007 \u2013 2010",
                 "2" = "Cycle 2: 2011 \u2013 2014",
                 "3" = "Cycle 3: 2015 \u2013 2018",
                 "4" = "Cycle 4: 2019 \u2013 2022",
-                "5" = "Cycle 5: 2023 \u2013 2025")
+                "5" = "Cycle 5: 2023 \u2013 2026")
 #midn2 <- c("APCO", "BOWA", "GETT", "HOFU", "VAFO")
 midn2_labs <- c("1" = "Cycle 1: 2007 \u2013 2010",
                 "2" = "Cycle 2: 2011 \u2013 2014",
                 "3" = "Cycle 3: 2015 \u2013 2018",
                 "4" = "Cycle 4: 2019 \u2013 2023",
-                "5" = "Cycle 5: 2024 \u2013 2025")
+                "5" = "Cycle 5: 2024 \u2013 2026")
 #ncbn <- c("GEWA", "THST")
 ncbn_labs <- c("1" = "Cycle 1: 2008 \u2013 2011",
                "2" = "Cycle 2: 2012 \u2013 2015",
                "3" = "Cycle 3: 2016 \u2013 2019",
                "4" = "Cycle 4: 2021 \u2013 2023",
-               "5" = "Cycle 5: 2024 \u2013 2025")
+               "5" = "Cycle 5: 2024 \u2013 2026")
 
 colo_labs <- c("1" = "Cycle 1: 2011 \u2013 2014",
                "2" = "Cycle 2: 2015 \u2013 2018",
                "3" = "Cycle 3: 2019 \u2013 2023",
-               "4" = "Cycle 4: 2024 \u2013 2025")
+               "4" = "Cycle 4: 2024 \u2013 2029")
 
 sahi_labs = c("1" = "Cycle 1: 2009",
               "2" = "Cycle 2: 2013",
@@ -193,7 +193,7 @@ sahi_labs = c("1" = "Cycle 1: 2009",
               "4" = "Cycle 4: 2023")
 
 asis_labs = c("1" = "Cycle 1: 2019 \u2013 2024",
-              "2" = "Cycle 2: 2025") 
+              "2" = "Cycle 2: 2025 \u2013 2026") 
 
 
 cycle_labs <- switch(park,

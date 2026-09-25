@@ -64,9 +64,9 @@ chrome_print(input = paste0(out_path, "RICH_figures_and_tables_NAnna.html"),
              output = paste0(out_path, "RICH_figures_and_tables_NAnna.pdf"),
              format = "pdf")
 
-render_MIDN_report_subunit <- function(parkcode, sub, year){
+render_MIDN_report_subunit <- function(parkcode, sub, year, partial){
   render(input = "MIDN_figures_subunits.Rmd",
-         params = list(park = parkcode, subunit = sub, report_year = year),
+         params = list(park = parkcode, subunit = sub, report_year = year, partial_cycle = partial),
          #envir = VIEWS_NETN,
          output_file = paste0(parkcode, "_", sub,  
                               "_Figures_", 
@@ -89,16 +89,10 @@ render_MIDN_report_subunit("PETE", "PETE_EAST", 2026)
 pdf_print_subunit("PETE", "PETE_FIVE")
 pdf_print_subunit("PETE", "PETE_EAST")
 
-render_MIDN_report_subunit("FRSP", "FRSP_CHWILD", 2026)
-render_MIDN_report_subunit("FRSP", "FRSP_CHWILD", 2026)
-render_MIDN_report_subunit("FRSP", "FRSP_FRED", 2026)
-render_MIDN_report_subunit("FRSP", "FRSP_FRED", 2026)
-render_MIDN_report_subunit("FRSP", "FRSP_SPOT", 2026)
-render_MIDN_report_subunit("FRSP", "FRSP_SPOT", 2026)
+render_MIDN_report_subunit("FRSP", "FRSP_CHWILD", 2026, F)
+render_MIDN_report_subunit("FRSP", "FRSP_FRED", 2026, F)
+render_MIDN_report_subunit("FRSP", "FRSP_SPOT", 2026, F)
 
 pdf_print_subunit("FRSP", "FRSP_CHWILD")
-pdf_print_subunit("FRSP", "FRSP_CHWILD")
 pdf_print_subunit("FRSP", "FRSP_FRED")
-pdf_print_subunit("FRSP", "FRSP_FRED")
-pdf_print_subunit("FRSP", "FRSP_SPOT")
 pdf_print_subunit("FRSP", "FRSP_SPOT")

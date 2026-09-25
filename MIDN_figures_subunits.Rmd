@@ -10,9 +10,10 @@ output:
     #   in_header: "header_MIDN.html"
     #   after_body: "footer_MIDN.html"
 params:
-  park: 'PETE'
-  subunit: 'PETE_FIVE' #'PETE_EAST'
+  park: 'FRSP'
+  subunit: 'FRSP_SPOT' #'PETE_EAST'
   report_year: 2026 # year report was generated for
+  partial_cycle: TRUE
 ---
 
 ```{r eval = F, include = F}
@@ -76,6 +77,7 @@ network_long <- midn_names$Network_long[midn_names$ParkCode == park]
 subunit_long <- midn_subunit_names$LongName[midn_subunit_names$SubUnitCode == subunit]
 subunit_title <- midn_subunit_names$LongName_title[midn_subunit_names$SubUnitCode == subunit]
 
+partial_cycle = params$partial_cycle
 ```
 
 ```{r results = 'asis', include = F}
@@ -129,7 +131,7 @@ include_graphics(paste0(new_path, "figures/", "Figure_2_", subunit, "_DBI_by_cyc
 
 ```{r results = 'asis'}
 cat(paste0("<p><b>Figure 2.</b> Deer browse impacts by cycle in ", subunit_long, " in ", park_long, " (", park, "). ",
-    paste(cycle_labs, collapse = "; "), ". ", ifelse(length(cycle_labs) == 5, "<b>Note that Cycle 5 is only partially complete.</b>", ""), ifelse(park == "COLO", "<b>Note that Cycle 4 only partially complete.</b>", ""),
+    paste(cycle_labs, collapse = "; "), ". ", ifelse(partial_cycle == TRUE, "Note that the latest cycle is only partially complete.", ""),
     sep = ""))
 
 ```
@@ -154,7 +156,7 @@ include_graphics(paste0(new_path, "figures/Figure_3B_", subunit, "_tree_dbh_dist
 ```{r results = 'asis'}
 cat(paste0("<p><b>Figure 3.</b> Stem density distributions by cycle in ", subunit_long, " in ", park_long, " (", park, "). ",
     paste(cycle_labs, collapse = "; "), ". ", 
-    ifelse(length(cycle_labs) == 5, "<b>Note that Cycle 5 is only partially complete. </b>", ""), ifelse(park == "COLO", "<b>Note that Cycle 4 is only partially complete. </b>", ""),
+    ifelse(partial_cycle == TRUE, "Note that the latest cycle is only partially complete.", ""),
     "Figure A shows regeneration densities by size class. Figure B shows tree density by diameter at breast height (DBH) increments. Error bars are 95% bootstrapped confidence intervals to account for non-normal error. An asterisk denotes a linear DBH distribution that is indicative of long-term recruitment failure.</p>", sep = ""))
 ```
 
